@@ -2,4 +2,4 @@
 
 Building an Etch-a-Sketch with javascript
 
-Part of Odin Project
+Part of Odin Project Curricul
