@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/png"> 
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <h1 id="page-title">Etch-a-Sketch</h1>
+
+    <main>
+        <section id="draw-panel" class="left-panel">
+            <form class="color-pick">
+                    <button type="button" id="default-color" class="color-buttons">Default</button>
+                    <button type="button" id="rainbow-color" class="color-buttons">Rainbow</button>
+                <div id="c-picker">
+                    <label for="pick">Color Picker</label>
+                    <input id="pick" type="color" value="">
+                </div>
+            </form>
+        </section>
+
+
+        <section id="main-grid">
+
+        </section>
+
+        <section id="erase-panel" class="right-panel">
+            <form class="clean-pick">
+                <button type="button" id="eraser">Erase</button>
+                <button type="button" id="cleaner">Clean</button>
+                <div id="grid-size">
+                    <label for="grid-slide">Grid Size</label>
+                    <div id="squares">
+                        <input type="range" id="grid-slider" name="grids" min="4" max="100" value="16">
+                        <p id="slider-text">16</p>
+                    </div>
+                </div>
+            </form>
+        </section>
+  
+
+    </main>
+</body>
+</html>
