@@ -3,10 +3,9 @@ let gridSize = 16;
 let gridLines = true;
 let defaultColor = "black";
 
-createGrid();
 
+//We add a functionality to the following buttons. Basically we are giving each button an action for when we click on them they pick the respective colors
 const colors = document.querySelectorAll("button");
-
 colors.forEach((button) => {
     button.addEventListener("click", (e) => {
         e.stopPropagation;
@@ -23,25 +22,19 @@ colors.forEach((button) => {
 
 })
 
-
-function rainbowColor() {
-    const red = Math.floor(Math.random()*256);
-    const green = Math.floor(Math.random()*256);
-    const blue = Math.floor(Math.random()*256);
-    const rgbColor = `rgb(${red}, ${green}, ${blue})`;
-    return rgbColor
-}
-
+// We choose a color from the color picker and our program will use that color we picked
 const colorPick = document.querySelector("#pick");
 colorPick.addEventListener("input", () => {
     defaultColor = colorPick.value;
 })
 
+// Add a button action to clean the grid when we click on it
 const cleanButton = document.querySelector("#cleaner");
 cleanButton.addEventListener("click", () => {
     cleanGrid();
 })
 
+// We define a function to reset the grid by removing the old grid and creating a new one
 function cleanGrid() {
     while(container.firstChild) {
         container.removeChild(container.firstChild);
@@ -49,6 +42,7 @@ function cleanGrid() {
     createGrid();
 }
 
+// Adjusts the n*n size of our grid
 const sizeGrid = document.querySelector("#grid-slider");
 sizeGrid.addEventListener("input", () => {
     const slideText = document.querySelector("#slider-text");
@@ -57,8 +51,16 @@ sizeGrid.addEventListener("input", () => {
     cleanGrid();
 })
 
+// Function definition for the rainbow button color. Each square will have a random color assigned
+function rainbowColor() {
+    const red = Math.floor(Math.random()*256);
+    const green = Math.floor(Math.random()*256);
+    const blue = Math.floor(Math.random()*256);
+    const rgbColor = `rgb(${red}, ${green}, ${blue})`;
+    return rgbColor
+}
 
-
+// Function definition to create our grid. Adding an event listener that will draw the colors that the user has picked when we mouseover each square of the grid
 function createGrid() {
     
     for (let i = 1; i <= gridSize**2; i++) {
@@ -81,3 +83,5 @@ function createGrid() {
         })
     })
 }
+
+createGrid();
